@@ -13,18 +13,30 @@
 import Cocoa
 import PlaygroundSupport
 
-// Create canvas
-let canvas = Canvas(width: 300, height: 300)
 
-//: ## Add your code below
-canvas.fillColor = Color.black
-for x in stride(from: 0, through: 300, by: 50) {
-    for y in stride(from: 300, to: 0, by: -50) {
-        canvas.drawEllipse(centreX: x, centreY: y, width: 3, height: 3)
-    }
-}
+var points : [NSPoint] = []
+points.append(NSPoint(x: -175, y: -175))
+points.append(NSPoint(x: -350, y: 0))
+points.append(NSPoint(x: -175, y: 175))
+canvas.drawCustomShape(with: points)
 
+var Points : [NSPoint] = []
+points.append(NSPoint(x: -175, y: 175))
+points.append(NSPoint(x: 0, y: 350))
+points.append(NSPoint(x: 175, y: 175))
+canvas.drawCustomShape(with: points)
 
+var points1 : [NSPoint] = []
+points.append(NSPoint(x: 175, y: 175))
+points.append(NSPoint(x: 350, y: 0))
+points.append(NSPoint(x: 175, y: -175))
+canvas.drawCustomShape(with: points)
+
+var points2 : [NSPoint] = []
+points.append(NSPoint(x: 175, y: -175))
+points.append(NSPoint(x: 0, y: -350))
+points.append(NSPoint(x: -175, y: -175))
+canvas.drawCustomShape(with: points)
 
 /*:
  ## Template code
