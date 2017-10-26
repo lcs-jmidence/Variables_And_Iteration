@@ -19,37 +19,39 @@ import PlaygroundSupport
 
 // Create canvas
 let canvas = Canvas(width: 500, height: 500)
-canvas.drawShapesWithFill = false
+canvas.drawShapesWithFill = true
 canvas.borderColor = Color.red
-
-// outline the canvas
+canvas.fillColor = Color.black
+// outline the canvas and draw rectangles
 canvas.borderColor = Color.red
-canvas.defaultBorderWidth = 3
-for size in stride(from: 500, through: 175, by: 50) {
+canvas.defaultBorderWidth = 6
+for size in stride(from: 500, through: 175, by: -70) {
     canvas.drawRectangle(centreX: 250, centreY: 250, width: size, height: size)
 }
 
 
 //canvas.drawAxes()
 canvas.translate(byX: 250, byY: 250)
-canvas.defaultBorderWidth = 5
+canvas.defaultBorderWidth = 6
 
 //rotate canvas
 canvas.rotate(by: -45)
-canvas.drawAxes()
 canvas.borderColor = Color.blue
 canvas.drawShapesWithFill = true
-canvas.fillColor = Color.white
+canvas.fillColor = Color.init(hue: 180, saturation: 100, brightness: 100, alpha: 100)
 // draw diamonds
 for x in stride(from: Int(0), through: 350, by: 50) {
     canvas.drawRectangle(centreX: 0, centreY: 0, width: x, height: x)
 }
 
-//finish the first triangles
-canvas.drawLine(fromX: -200, fromY: 175, toX: -200, toY: -175)
-canvas.drawLine(fromX: -175, fromY: -200, toX: 175, toY: -200)
-canvas.drawLine(fromX: 200, fromY: -175, toX: 200, toY: 175)
-canvas.drawLine(fromX: -175, fromY: 200, toX: 175, toY: 200)
+canvas.drawShapesWithFill = false
+for diamond in stride(from: 0, through: 350, by: 50) {
+    canvas.drawRectangle(centreX: 0, centreY: 0, width: diamond, height: diamond)
+}
+
+// draw axes if needed
+
+
 
 
 
